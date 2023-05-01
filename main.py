@@ -1,21 +1,16 @@
 import pygame
 
-pygame.init()
-screen = pygame.display.set_mode((1000, 720))
-clock = pygame.time.Clock()
-running = True
 
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+def game():
+    pygame.init()
+    screen = pygame.display.set_mode((1000, 720))
 
-    screen.fill('purple')
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+        screen.fill('purple')
+        pygame.display.flip()
 
-    ###
 
-    pygame.display.flip()
-
-    clock.tick(60)
-
-pygame.quit()
+game()
